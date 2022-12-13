@@ -1,0 +1,22 @@
+﻿@model WebUI.Models.ViewModel.RecoveryViewModel
+@{
+    ViewBag.Title = "StartRecovery";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form action="@Url.Content("StartRecovery")" method="post">
+            <div class="account-login-inner">
+                <div class="ltn__form-box contact-form-box">
+                    <label>Escribe tu correo electrónico.</label>
+                    @Html.TextBoxFor(d => d.Email, null, new { @class = "ltn__form-box contact-form-box" })
+                    @Html.ValidationMessageFor(d => d.Email, null, new { style = "color: red" })
+                    <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                        <button class="theme-btn-1 btn reverse-color btn-block">Recuperar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

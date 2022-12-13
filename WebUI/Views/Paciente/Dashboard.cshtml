@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/Layouts/DashboardPaciente.cshtml";
+}
+
+<section class="row">
+    <div class="col-12 col-lg-9">
+        <div class="row">
+            <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body px-4 py-4-5">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                                <img src="~/Assets/img/2.jpg" id="paciente-pic" />
+                            </div>
+                            <div class="ms-3 name">
+                                <h5 class="font-bold" id="paciente-name">Nombre del usuario</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+            <img src="~/Assets/img/backgroundDashboard.jpg" />
+        </div>
+    </div>
+    
+</section>
+
+<script src="~/Scripts/apexcharts/apexcharts.min.js"></script>
+<script src="~/Assets/Scripts/DashboardPaciente.js"></script>
+<script src="~/Assets/Scripts/DataDashboardPaciente.js"></script>

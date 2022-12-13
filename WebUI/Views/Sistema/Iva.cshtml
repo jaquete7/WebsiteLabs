@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Iva";
+    Layout = "~/Views/Shared/Layouts/DashboardAdmin.cshtml";
+}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>IVA</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Actualiza el monto agregado por compra</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+
+                            <form class="" novalidate action="#">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Monto actual</h6>
+                                        <div class="input-control">
+                                            <input type="text" id="txtCurrentIVA" readonly value="%">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6>Actualizar monto</h6>
+                                        <div class="">
+                                            <input type="text" id="txtIva"  placeholder="Actualizar monto" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 mt-30">
+                                        <button class="theme-btn-1 btn reverse-color btn-block" id="btnEditar" type="submit">Actualizar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidarIVA.js"></script>

@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Procesar pago";
+}
+
+<div class="body-wrapper">
+    <div class="ltn__checkout-area mb-105">
+        <div class="container mt-50">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__checkout-inner">
+                        <div class="ltn__checkout-single-content ltn__coupon-code-wrap">
+                            <h5>¿Tienes un cupón? <a class="ltn__secondary-color" href="#ltn__coupon-code" data-bs-toggle="collapse">Haz click aqui para ingrear tú cupón</a></h5>
+                            <div id="ltn__coupon-code" class="collapse ltn__checkout-single-content-info">
+                                <div class="ltn__coupon-code-form">
+                                    <p>Si usted cuenta con un cupon, favor ingresarlo en el campo de abajo.</p>
+                                    
+                                    <input type="text"  id="txt-cupon" name="coupon-code" placeholder="Código del cupón">
+                                    <button onclick="setCupon()" class="btn theme-btn-2 btn-effect-2 text-uppercase">Applicar Cupon</button>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ltn__checkout-single-content mt-50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ltn__checkout-payment-method mt-50">
+                        <h4 class="title-2">Método de Pago</h4>
+                        <div id="checkout_accordion_1">
+                            <div class="card">
+                                <h5 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-3" aria-expanded="true">
+                                    PayPal <img src="~/Assets/img/payment-3.png" alt="#">
+                                </h5>
+                                <div id="faq-item-2-3" class="collapse" data-bs-parent="#checkout_accordion_1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ltn__payment-note mt-30 mb-30">
+                            <p>Su informacíon personal será utilizada para procesar la orden, mejorar su experiencia mientras navega por nuestra página y para otros propositos descritos en nuestra terminos de política y privacidad.</p>
+                        </div>
+                        <div id="paypal-button-container">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping-cart-total mt-50">
+                        <h4 class="title-2">Items</h4>
+                        <table id="table-items" class="table">
+                            <tbody>
+                                <tr> </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="shoping-cart-total mt-50">
+                        <h4 class="title-2">Total</h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Descuento por cupón</td>
+                                    <td id="descuento-cupon">$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Impuesto</td>
+                                    <td id="val-iva">₡0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total a pagar</strong></td>
+                                    <td><strong data-total="" class="total"></strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=AXxaPr0O7pAkYpA1QEBVk2at7CPMlP-RbhSxrG5BB7xZs4Paw9Du5HaA-PjB3668sQlo0b94Oe_u5oFR&currency=USD"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidarCheckout.js"></script>

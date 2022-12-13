@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/Layouts/DashboardProveedor.cshtml";
+}
+
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Editar Examenes</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Completa los datos</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+
+                            <form class="needs-validation" novalidate action="#" id="Form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Nombre</h6>
+                                        <div class="input-item input-item-name ">
+                                            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h6>Precio</h6>
+                                        <div class="input-item input-item-name">
+                                            <input type="text" name="precio" class="form-control" id="precio" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <h6>Descripción</h6>
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="descripcion" cols="30" rows="10"  class="form-control" id="descripcion" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <h6>Datos Evaluados</h6>
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="datos_evaluados" cols="30" rows="10" class="form-control" id="datos_evaluados" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h6>ID Examen</h6>
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="idExamen" cols="30" rows="10" class="form-control" id="idExamen" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <h6>Recomendaciones</h6>
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="recomendaciones" cols="30" rows="10"class="form-control" id="recomendaciones" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                                    <button class="theme-btn-1 btn reverse-color btn-block" id="btnEditar" type="submit">Editar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidacionSimple.js"></script>
+<script src="~/Assets/Scripts/EditarExamen.js"></script>

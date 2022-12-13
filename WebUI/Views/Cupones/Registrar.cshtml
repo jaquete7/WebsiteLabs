@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Registrar cupones";
+    Layout = "~/Views/Shared/Layouts/DashboardProveedor.cshtml";
+}
+<link href="~/Assets/css/RegistroPaciente.css" rel="stylesheet" />
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Registrar Cupones</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Completa los datos</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form id="form" class="needs-validation" novalidate>
+                                <h6>Nombre de Cupón</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__name" class="form-control" id="txtNombreExamen" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h6>Código de Cupón</h6>
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__lastname"class="form-control" id="txtCodigo" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <h6>Porcentaje de Descuento</h6>
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__lastname" class="form-control" placeholder="%" id="txtPrctjDesc" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <h6>Fecha de Expiración</h6>
+                                        <div class="input-control">
+                                            <input type="date" name="ltn__lastname" class="form-control" id="txtFecha" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="btn-wrapper">
+                                    <button class="theme-btn-1 btn reverse-color btn-block" type="submit">Registrar Cupón</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidarCupones.js"></script>

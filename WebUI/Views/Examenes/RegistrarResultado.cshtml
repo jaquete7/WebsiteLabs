@@ -1,0 +1,77 @@
+﻿  Layout = "~/Views/Shared/Layouts/DashboardProveedor.cshtml";
+}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Registrar Examenes</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Completa los datos</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+
+                            <form class="needs-validation" novalidate action="#" id="Form">
+                                <h6>Información</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-item input-item-name ">
+                                            <input type="text" name="ltn__name" class="form-control" placeholder="Nombre del examen" id="nombre" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-item input-item-name">
+                                            <input type="text" name="ltn__lastname" placeholder="Precio" class="form-control" id="precio" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="ltn__message" cols="30" rows="10" placeholder="Descripcion corta" class="form-control" id="descrip" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="ltn__message" cols="30" rows="10" placeholder="Datos evaluados" class="form-control" id="datos" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="ltn__message" cols="30" rows="10" placeholder="ID Examen" class="form-control" id="idExamen" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="input-item input-item-name mb-30">
+                                            <textarea name="ltn__message" cols="30" rows="10" placeholder="Recomendaciones" class="form-control" id="recomen" aria-describedby="inputGroupPrepend" required></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="btn-wrapper">
+                                    <button class="theme-btn-1 btn reverse-color btn-block" id="btnCrear" type="submit">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidacionSimple.js"></script>
+<script src="~/Assets/Scripts/RegistrarExamen.js"></script>

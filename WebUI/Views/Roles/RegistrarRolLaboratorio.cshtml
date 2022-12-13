@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "RegistrarRolLaboratorio";
+    Layout = "~/Views/Shared/Layouts/DashboardProveedor.cshtml";
+}
+
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Registrar Rol</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Completa los datos</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+
+                            <form class="needs-validation" novalidate action="#">
+                                <h6>Información</h6>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-item input-item-name ">
+                                            <input type="text" name="ltn__name" class="form-control" placeholder="Nombre del rol" id="nombre-rol" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="mb-20">Selecciona los permisos disponibles para este rol</h6>
+                                <div class="row mb-20">
+                                    <div class="col-md-4">
+                                        <div class="input-item input-item-name mb-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                       id="crear-roles">
+                                                <label class="form-check-label form-label"
+                                                       for="crear-roles">
+                                                    Permitir acceso a la manipulacion y creacion de roles
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-item input-item-name mb-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                       id="crear-colaboradores">
+                                                <label class="form-check-label form-label"
+                                                       for="crear-colaboradores">
+                                                    Permitir acceso a la manipulacion y creacion de otros colaboradores
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="input-item input-item-name mb-20">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                       id="crear-examenes">
+                                                <label class="form-check-label form-label"
+                                                       for="crear-examenes">
+                                                    Permitir acceso a la manipulacion y creacion de examenes
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-item input-item-name mb-20">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                       id="crear-cupones">
+                                                <label class="form-check-label form-label"
+                                                       for="crear-cupones">
+                                                    Permitir acceso a la manipulacion y creacion de cupones
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-item input-item-name mb-20">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                       id="crear-resultados">
+                                                <label class="form-check-label form-label"
+                                                       for="crear-resultados">
+                                                    Permitir acceso a la manipulacion de resultado de citas
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                                    <button id="guardar-rol" class="theme-btn-1 btn reverse-color btn-block" type="submit">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ValidarRoles.js"></script>

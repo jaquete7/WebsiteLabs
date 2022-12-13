@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+
+
+    <link href="~/Content/css/Icons.css" rel="stylesheet" />
+    <link href="~/Content/css/Plugins.css" rel="stylesheet" />
+    <link href="~/Content/css/VicodinComponents.css" rel="stylesheet" />
+    <link href="~/Content/css/VicodinResponsive.css" rel="stylesheet" />
+
+    <script src="~/Scripts/PluginsVicodinComponents.js"></script>
+    <script src="~/Scripts/MainVicodinComponents.js"></script>
+
+    <script src="~/Assets/Scripts/ValidarLoginMenu.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
+
+    @Scripts.Render("~/bundles/ControlAcciones")
+
+</head>
+<body>
+    <section class="body-wrapper">
+
+        <header class="ltn__header-area ltn__header-3">
+            <!-- TOP HEADER -->
+            <div class="ltn__header-top-area border-bottom top-area-color-white---">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="ltn__top-bar-menu">
+                                <ul>
+                                    <li><a href="mailto:info@ucenfotec.ac.cr"><i class="icon-mail"></i> info@ucenfotec.ac.cr</a></li>
+                                    <li><a href="locations.html"><i class="icon-placeholder"></i> San José, San José, Costa Rica.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="top-bar-right text-end">
+                                <div class="ltn__top-bar-menu">
+                                    <ul>
+                                        <li>
+                                            <div class="ltn__social-media">
+                                                <ul>
+                                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a> </li>
+                                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links de las paginas -->
+            <div class="ltn__header-middle-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col header-contact-serarch-column d-none d-lg-block">
+                            <div class="header-contact-search">
+                                <div class="header-feature-item">
+                                    <div>
+                                        <img src="~/Assets/img/LogoNoLimits.png" alt="#">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">
+                            <div class="name">
+                                <h1>
+                                    NoLimitsApp
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="ltn__header-options">
+                                <ul>
+                                    <li class="d-none---">
+                                        <div class="ltn__drop-menu user-menu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"> Menú Acciones <i class="icon-user"></i></a>
+                                                    <ul>
+
+                                                        <li class="logout sidebar-link"> <a href="@Url.Action("Login", "Home", new { itemId = 1 })"> Iniciar Sesión </a> </li>
+                                                        <li class="logout sidebar-link"> <a href="/Home/Producto#Registrarse">Registrarse </a> </li>
+
+                                                        <li class="Administrador" style="display:none;"> <a href="@Url.Action("Dashboard", "Administrador")" class=" sidebar-link"> Dashboard </a> </li>
+                                                        <li class="Proveedor" style="display:none;"> <a href="@Url.Action("Index", "Proveedor")" class=" sidebar-link"> Mis laboratorios </a> </li>
+                                                        <li class="Paciente" style="display:none;"> <a href="@Url.Action("Dashboard", "Paciente")" class=" sidebar-link"> Dashboard </a> </li>
+
+                                                        <li class="Paciente Proveedor Administrador" style="display:none;"> <a href="#" id="logout" class=" sidebar-link"> Cerrar sesion </a> </li>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        @if (Session["user"] != null)
+                                        {
+                                            <div class="mini-cart-icon mini-cart-icon-2">
+                                                <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
+                                                    <span class="mini-cart-icon">
+                                                        <i class="icon-shopping-cart"></i>
+                                                        <sup> Cantidad de items </sup>
+                                                    </span>
+                                                    <h6><span>Carrito</span> <span class="ltn__secondary-color"> Total a pagar </span></h6>
+                                                </a>
+                                            </div>
+                                        }
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom-area ltn__border-top ltn__header-sticky  ltn__sticky-bg-white--- ltn__sticky-bg-secondary ltn__secondary-bg section-bg-1 menu-color-white d-none d-lg-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col header-menu-column justify-content-center">
+                            <div class="sticky-logo">
+                            </div>
+                            <div class="header-menu header-menu-2">
+                                <nav>
+                                    <div class="ltn__main-menu">
+                                        <ul>
+                                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                            <li>@Html.ActionLink("Nuestro Producto", "Producto", "Home")</li>
+                                            <li>@Html.ActionLink("Laboratorios registrados", "Index", "Laboratorio")</li>
+                                            <li>@Html.ActionLink("Contacto", "Index", "Contactanos")</li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            @RenderBody()
+        </main>
+
+        <footer class="ltn__footer-area">
+            <div class="footer-top-area  section-bg-2 plr--5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget footer-about-widget">
+                                <div class="footer-logo">
+                                    <div class="site-logo">
+                                        <h3>
+                                            No Limits Solutions
+                                        </h3>
+                                    </div>
+                                </div>
+                                <p>
+                                    Ubicación
+                                </p>
+                                <div class="footer-address">
+                                    <ul>
+                                        <li>
+                                            <div class="footer-address-icon">
+                                                <i class="icon-placeholder"></i>
+                                            </div>
+                                            <div class="footer-address-info">
+                                                <p> Barrio Francisco Peralta, sobre Avenida Central y Calle 33, 10104 San José, Provincia de San José, Costa Rica. </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="footer-address-icon">
+                                                <i class="icon-call"></i>
+                                            </div>
+                                            <div class="footer-address-info">
+                                                <p><a href="tel:+50660008050 ">+506 6000 8050 </a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="footer-address-icon">
+                                                <i class="icon-mail"></i>
+                                            </div>
+                                            <div class="footer-address-info">
+                                                <p><a href="mailto:info@ucenfotec.ac.cr">info@ucenfotec.ac.cr</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ltn__social-media mt-20">
+                                    <ul>
+                                        <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget footer-menu-widget clearfix">
+                                <h4 class="footer-title">Respaldo</h4>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget footer-menu-widget clearfix">
+                                <h4 class="footer-title">Rendimiento</h4>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                            <div class="footer-widget footer-menu-widget clearfix">
+                                <h4 class="footer-title">Responsabilidad</h4>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                            <div class="footer-widget footer-newsletter-widget">
+                                <h4 class="footer-title">Potencia tu negocio, ¡regístrate ya!</h4>
+
+                                <h5 class="mt-30">Medio de pago</h5>
+                                <img src="~/Assets/img/payment-3.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
+                <div class="container-fluid ltn__border-top-2">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="ltn__copyright-design clearfix">
+                                <p>Derechos reservados || NoLimits Solutions 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

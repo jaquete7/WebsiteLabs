@@ -1,0 +1,6 @@
+﻿body {
+}
+
+.sidebar-wrapper .menu .sidebar-item.active > .sidebar-link {
+    background-color: #0A9A73;
+}

@@ -1,0 +1,273 @@
+﻿
+@{
+    ViewBag.Title = "VerificacionOTP";
+}
+
+<link href="~/Assets/css/ValidacionOTP.css" rel="stylesheet" />
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.13/build/css/intlTelInput.min.css"
+      integrity="sha256-xpVuhxDPR39wFEQDha4W7kuMx+z9Av3dTS8MbH/RWEU="
+      crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.13/build/js/intlTelInput.min.js"
+        integrity="sha256-uPbemOnf3P4eaeLHebLwPC71YRbu3WNBvO4ibYeBnGs="
+        crossorigin="anonymous"></script>
+
+
+
+<main>
+    <div class="body-wrapper">
+        <section>
+            <h2>VerificaciónOTP</h2>
+            <p>
+                Antes de ingresar a su cuenta, valide su cuenta a continuación:
+            </p>
+            <hr />
+            <form id="send-code">
+                <p>Seleccione el medio:</p>
+                <div>
+                    <input type="radio"
+                           name="channel"
+                           id="channel-sms"
+                           value="sms"
+                           checked />
+                    <label for="channel-sms">SMS</label>
+                </div>
+
+
+                <div>
+                    <input type="radio"
+                           name="channel"
+                           id="channel-email"
+                           value="email" />
+                    <label for="channel-email">Email</label>
+                </div>
+                <div id="phone-input">
+                    <p>Ingrese su teléfono:</p>
+                    <input type="tel" id="phone_number" />
+                </div>
+                <div id="email-input" style="display: none">
+                    <p>Ingrese su correo electrónico:</p>
+                    <input type="email" id="email" />
+                </div>
+
+
+                <input class="theme-btn-1 btn reverse-color btn-block" type="submit" value="Obtener Código" />
+                <button class="theme-btn-1 btn reverse-color btn-block" type="submit">Registrar</button>
+                <span id="status" class="status"></span>
+            </form>
+        </section>
+        <section>
+            <div id="otp-modal">
+                <div class="modal-content">
+                    <span id="close">&times;</span>
+                    <form id="check-code">
+                        <div>
+                            <p>Enter the code:</p>
+                            <input type="text" id="code" placeholder="123456" required />
+                        </div>
+                        <div>
+                            <input type="submit" value="Verify code" />
+                        </div>
+                        <span id="modal-status" class="status"></span>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- EDIT_CODE_V2 -->
+    </div>
+
+
+    
+</main>
+
+<script>
+    // Handle international prefixes, format phone input field
+    // Uses intl-tel-input library
+    const user = JSON.parse(sessionStorage.getItem('userData'));
+    const phoneInputField = document.querySelector("#phone_number");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        preferredCountries: ["cr"],
+        utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.13/build/js/utils.js",
+    });
+
+    function selectedChannel() {
+        const checked = "input[name='channel']:checked";
+        return document.querySelector(checked).value;
+    }
+
+    const phoneInputDiv = document.getElementById("phone-input");
+    const emailInputDiv = document.getElementById("email-input");
+
+    function showEmailInput() {
+        phoneInputDiv.style.display = "none";
+        emailInputDiv.style.display = "block";
+    }
+
+    function showPhoneNumberInput() {
+        phoneInputDiv.style.display = "block";
+        emailInputDiv.style.display = "none";
+    }
+
+    const statusSpan = document.getElementById("status");
+    const modalStatusSpan = document.getElementById("modal-status");
+
+    function showModalStatus(message, options = { color: "gray" }) {
+        modalStatusSpan.style.color = options.color;
+        modalStatusSpan.textContent = message;
+    }
+
+    function showError(error) {
+        console.error(error);
+        showStatus(error, { color: "#a94442" });
+    }
+
+    function showStatus(message, options = { color: "gray" }) {
+        statusSpan.style.color = options.color;
+        statusSpan.textContent = message;
+    }
+
+    function clearStatus() {
+        statusSpan.textContent = "";
+        modalStatusSpan.textContent = "";
+    }
+
+    const modal = document.getElementById("otp-modal");
+    var to;
+    var channel;
+
+    async function sendOtp(event) {
+        event.preventDefault();
+
+        
+        const channel = selectedChannel();
+
+        let statusMessage =
+            channel == "call" ? "☎️ calling..." : "Sending verification code...";
+        showStatus(statusMessage);
+
+        to =
+            channel == "email"
+                ? document.getElementById("email").value
+                : phoneInput.getNumber();
+
+        const data = new URLSearchParams();
+        data.append("channel", channel);
+        
+        data.append("to", to);
+
+       
+        
+        try {
+
+            const response = await fetch('https://nolimits-web.azurewebsites.net/api/OTP/EnviarOTP', {
+                method: "POST",
+                body: data,
+            });
+
+            const json = await response.json();
+
+            if (response.status == 429) {
+                clearStatus();
+                modal.style.display = "block";
+                showModalStatus(
+                    `You have attempted to verify '${to}' too many times. If you received a code, enter it in the form. Otherwise, please wait 10 minutes and try again.`,
+                    { color: "#a94442" }
+                );
+            } else if (response.status >= 400) {
+                clearStatus();
+                showError(json.error);
+            } else {
+                modal.style.display = "block";
+                if (json.success) {
+                    showStatus(`Sent verification code to ${to}`);
+                } else {
+                    showError(json.error);
+                }
+            }
+        } catch (error) {
+            console.error(error);
+            showError(`Something went wrong while sending code to ${to}.`);
+        }
+
+        
+    }
+
+    //Envento que llama a la funcion enviar OTP
+    document
+        .getElementById("send-code")
+        .addEventListener("submit", (event) => sendOtp(event));
+
+    async function checkOtp(event) {
+        event.preventDefault();
+        let code = document.getElementById("code");
+        showModalStatus(`Checking code ${code.value}...`);
+
+        const data = new URLSearchParams();
+        data.append("to", to);
+        data.append("code", code.value);
+        data.append("channel", channel);
+
+        try {
+            const response = await fetch('https://nolimits-web.azurewebsites.net/api/OTP/CheckOTP', {
+                method: "POST",
+                body: data,
+            });
+
+            const json = await response.json();
+
+            if (json == 'approved') {
+                showModalStatus("Verificación completada!", { color: "green" });
+                code.value = "";
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://nolimits-web.azurewebsites.net/api/Paciente/ActualizarEstado',
+                    traditional: true,
+                    data: user,
+                    content: "application/json;",
+                    dataType: "json",
+                    success: function () {
+                    }
+                });
+
+
+            } else {
+                showModalStatus("Token Incorrecto", { color: "#a94442" });
+                code.value = "";
+            }
+        } catch (error) {
+            console.error(error);
+            showModalStatus("Algo Salió Mal!");
+            code.value = "";
+        }
+    }
+
+    let checkCode = document.getElementById("check-code");
+    checkCode.addEventListener("submit", (event) => checkOtp(event));
+
+    let closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", () => {
+        clearStatus();
+        modal.style.display = "none";
+    });
+
+    window.onclick = function (event) {
+        switch (event.target.id) {
+            case "otp-modal":
+                modal.style.display = "none";
+                clearStatus();
+                break;
+            case "channel-email":
+                showEmailInput();
+                break;
+            case "channel-sms":
+                showPhoneNumberInput();
+                break;      
+        }
+    };
+</script>
+<script src="~/Assets/Scripts/start-verify.js"></script>
+<script src="locales.js"></script>
+

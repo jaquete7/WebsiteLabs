@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "EditarUserAdmin";
+    Layout = "~/Views/Shared/Layouts/DashboardAdmin.cshtml";
+}
+
+<link href="~/Assets/css/RegistroPaciente.css" rel="stylesheet" />
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Editar Usuarios</h3>
+                <p class="text-subtitle text-muted">..</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="multiple-column-form">
+        <div class="row match-height">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Completa los datos | Información personal</h4>
+                    </div>
+                    <div class="card-content">
+                        <div id="form" class="card-body">
+
+                            <form class="needs-validation" novalidate action="#">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Nombre completo</h6>
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__name" class="form-control" id="txtNombreCompleto" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Identificación</h6>
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__lastname" class="form-control" id="txtIdentificacion" aria-describedby="inputGroupPrepend" disabled required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Correo Electónico</h6>
+                                        <div class="input-control">
+                                            <input type="email" name="ltn__email" class="form-control" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h6>Célular</h6>
+                                        <div class="input-control">
+                                            <input type="text" name="ltn__phone" class="form-control" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h6>Provincia</h6>
+                                        <div class="input-control">
+                                            <input type="text" id="txtProvincia" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6>Cantón</h6>
+                                        <div class="input-control">
+                                            <input type="text" id="txtCanton" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6>Distrito</h6>
+                                        <div class="input-control">
+                                            <input type="text" id="txtDistrito" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6>Tipo de usuario</h6>
+                                        <div class="input-item">
+                                            <select class="form-control nice-select" id="txtTipoUsuario" required>
+                                                <option value="Proveedor">Proveedor</option>
+                                                <option value="Paciente">Paciente</option>
+                                                <option value="Colaborador">Colaborador</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="container-rol" style="display:none" class="col-md-12">
+                                        <h6 id="slt-rol">Rol de Permiso</h6>
+                                        <div class="input-item">
+                                            <select class="form-control nice-select" id="txtRol" required>
+                                                <option>Seleccione el rol</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <h6>Dirección</h6>
+                                    <div class="input-item input-item-textarea ">
+                                        <textarea name="ltn__message" class="form-control" id="txtDireccion" aria-describedby="inputGroupPrepend" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Contraseña</h6>
+                                    <div class="input-control">
+                                        <input type="password" id="txtPassword">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Confirmar Contraseña</h6>
+                                    <div class="input-control">
+                                        <input type="password" id="txtConfirmarPassword">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="card text-center col-6 mx-auto" style="width: 18rem;">
+                                        <img src="~/Assets/img/usuariodefault.jpg" class="card-img-top" alt="" id="user-photo">
+                                        <div class="card-body">
+                                            <p class="card-text">Seleccione su foto de perfil</p>
+                                            <button id="btn-foto" type="button" class="btn theme-btn-1">Subir Imagen</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                                    <button class="theme-btn-1 btn reverse-color btn-block" id="btnEditar" type="submit">Editar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ServicioFoto.js"></script>
+<script src="~/Assets/Scripts/EditarUserAdmin.js"></script>

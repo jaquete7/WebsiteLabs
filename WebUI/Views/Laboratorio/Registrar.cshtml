@@ -1,0 +1,132 @@
+﻿<link href="~/Assets/css/RegistroPaciente.css" rel="stylesheet" />
+
+<div class="body-wrapper">
+    <div class="ltn__login-area pb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area text-center">
+                        <h1 class="section-title">Registra tu Laboratorio</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-3">
+                    <div class="account-login-inner">
+                        <form id="form" class="needs-validation" novalidate>
+                            <h5>Información del Laboratorio</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Nombre</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__name" class="form-control" id="txtNombre" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h6>Nombre Comercial</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__lastname" class="form-control" id="txtNombreComercial" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Cédula Jurídica</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__cedjuridica" class="form-control" id="txtCedulaJuridica" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Razón Social</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtRazonSocial" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Teléfono de Contacto</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtTelefonoContacto" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Correo Electrónico</h6>
+                                    <div class="input-control">
+                                        <input type="email" name="ltn__phone" class="form-control" id="txtCorreoElectronico" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Provincia</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtProvincia" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Cantón</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtCanton" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Distrito</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtDistrito" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6>Redes Sociales</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__name" class="form-control" placeholder="Ingresa el link de Facebook de tu Laboratorio" id="txtUrlFacebook">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__lastname" placeholder="Ingresa el link de Instagram de tu Laboratorio" class="form-control" id="txtUrlInstagram">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__cedjuridica" placeholder="Ingresa el link de Twitter de tu Laboratorio" class="form-control" id="txtUrlTwitter">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" placeholder="Ingresa el link de LinkedIn de tu Laboratorio" class="form-control" id="txtUrlLinkedIn">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6>Dirección de la página del laboratorio</h6>
+                                    <div class="input-control">
+                                        <input type="text" name="ltn__phone" class="form-control" id="txtUrlPaginaLab" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h6>Dirección Exacta</h6>
+                                <div class="input-control">
+                                    <textarea name="ltn__message" class="form-control" id="txtDireccion" aria-describedby="inputGroupPrepend" required></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card text-center col-6 mx-auto" style="width: 18rem;">
+                                    <img src="/Assets/img/usuariodefault.jpg" class="card-img-top" alt="" id="user-photo">
+                                    <div class="card-body">
+                                        <p class="card-text">Seleccione su foto de perfil</p>
+                                        <button id="btn-foto" type="button" class="btn theme-btn-1">Subir Imagen</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                                <button class="theme-btn-1 btn reverse-color btn-block" type="submit">Registrar Resultado</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/ServicioFoto.js"></script>
+<script src="~/Assets/Scripts/ValidarLab.js"></script>

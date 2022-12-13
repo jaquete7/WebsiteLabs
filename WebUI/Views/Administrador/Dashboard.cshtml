@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/Layouts/DashboardAdmin.cshtml";
+}
+
+<section class="row">
+    <div class="col-12 col-lg-9">
+        <div class="row">
+            <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body px-4 py-4-5">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="stats-icon purple mb-2">
+                                    <i class="fas fa-money-bill-wave-alt"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                <h6 class="text-muted font-semibold">Ingresos totales</h6>
+                                <h6 id="total-ingresos" class="font-extrabold mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body px-4 py-4-5">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="stats-icon blue mb-2">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                <h6 class="text-muted font-semibold">Proveedores registrados</h6>
+                                <h6 id="proveedores-registrados"  class="font-extrabold mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body px-4 py-4-5">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                <div class="stats-icon red mb-2">
+                                    <i class="fas fa-user-tag"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                <h6  class="text-muted font-semibold">Pacientes registrados</h6>
+                                <h6 id="pacientes-ingresos" class="font-extrabold mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-3">
+        <div class="card">
+            <div class="card-body py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-xl">
+                        <img id="admin-pic" src="~/Assets/img/2.jpg" />
+                    </div>
+                    <div class="ms-3 name">
+                        <h5 id="admin-name" class="font-bold">Nombre del usuario</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <div class="col-12 col-lg-12">
+        <div class="row">
+            <div class="col-12 col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Bitácora</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tbl-vitacora" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Acción</th>
+                                        <th>Descripción</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script src="~/Scripts/apexcharts/apexcharts.min.js"></script>
+<script src="~/Assets/Scripts/DashboardAdmin.js"></script>

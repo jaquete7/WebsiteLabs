@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Examen";
+}
+
+
+<div class="body-wrapper">
+    <div class="ltn__shop-details-area pb-85">
+        <div class="container mt-50">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="ltn__shop-details-inner mb-60">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="modal-product-info shop-details-info pl-0">
+                                    <h3 class="nombre"></h3>
+                                    <div class="product-price">
+                                        <span class="precio">₡</span>
+                                    </div>
+                                    <div class="modal-product-meta ltn__product-details-menu-1">
+                                        <ul>
+                                            <div class="ltn__social-media">
+                                                <ul>
+                                                    <h5>Puedes realizar tu pago via PayPal</h5>
+                                                </ul>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="ltn__product-details-menu-3 text-left">
+                                        <ul>
+                                            <li>
+                                                <a id="add-carrito" onclick="addCarrito()" href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <span>Añadir</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a id="pay-now" onclick="payNow()" href="#" class="theme-btn-1 btn btn-effect-1" >
+                                                    <span>Pagar ahora</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+
+                                    <hr>
+                                    <div class="ltn__safe-checkout">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ltn__shop-details-tab-inner ltn__shop-details-tab-inner-2">
+                                    <div class="ltn__shop-details-tab-menu">
+                                        <div class="nav">
+                                            <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Información</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active show" id="liton_tab_details_1_1">
+                                            <div class="ltn__shop-details-tab-content-inner">
+                                                <h4 class="title-2">Descripción</h4>
+                                                <p class="descripcion">
+                                                </p>
+                                                <h4 class="title-2">Datos evaluados</h4>
+                                                <p class="datos-evaluados">
+                                                </p>
+                                                <h4 class="title-2">Recomendaciones</h4>
+                                                <p class="recomendaciones">
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/VerInfoExamen.js"></script>
+<script src="~/Assets/Scripts/ValidarCarrito.js"></script>

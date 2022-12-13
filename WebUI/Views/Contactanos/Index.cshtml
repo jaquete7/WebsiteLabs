@@ -1,0 +1,97 @@
+﻿
+<link href="~/Assets/css/RegistroPaciente.css" rel="stylesheet" />
+
+<div class="body-wrapper">
+    <div class="ltn__contact-address-area mb-90">
+        <div class="container mt-50">
+            <h1>información de Contacto</h1>
+            <div class="row mt-90">
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="~/Assets/img/10.png" alt="Icon Image" />
+                        </div>
+                        <h3>Correo Electronico</h3>
+                        <p>
+                            info@ucenfotec.ac.cr <br>
+                            nolimitssolution@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="~/Assets/img/11.png" alt="Icon Image" />
+                        </div>
+                        <h3>Teléfono</h3>
+                        <p>+506 4324 5678 <br> +506 8392 8923</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="~/Assets/img/12.png" alt="Icon Image" />
+                        </div>
+                        <h3>Ubicación</h3>
+                        <p>
+                            1 Frente a Farmacia de Clínica Bíblica CR,  <br>
+                            Av. 14, San José, 10101
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ltn__contact-message-area ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="form" class="ltn__form-box contact-form-box box-shadow white-bg">
+                        <h4 class="title-2">Contáctenos</h4>
+                        <form action="https://formsubmit.co/0897c56f3eb21e5d31a19bbe651b07ba" method="POST" class="needs-validation" id="form" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="name" class="form-control" placeholder="Nombre completo" id="txtNombreCompleto" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="subject" placeholder="Asunto" class="form-control" id="txtAsunto" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="email" name="email" placeholder="Correo Electrónico" class="form-control" id="txtCorreo" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <input type="text" name="phone" placeholder="Celular" class="form-control" id="txtTelefono" aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h6>Mensaje</h6>
+                                <div class="input-control">
+                                    <textarea type="text" name="message" placeholder="Ingrese el mensaje." class="form-control" id="txtDescripcion" aria-describedby="inputGroupPrepend" required></textarea>
+                                </div>
+                            </div>
+                            <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                                <button class="theme-btn-1 btn reverse-color btn-block" type="submit">Enviar</button>
+                            </div>
+                            <input type="hidden" name="_next" value="https://nolimits.azurewebsites.net/Contactanos"/>
+                            <input type="hidden" name="_captcha" value="true"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+

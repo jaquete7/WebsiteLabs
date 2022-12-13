@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmaciónQR";
+   
+}
+<body>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            const product = urlParams.get('id');
+            console.log(product);
+
+            $("#txtNombreCompleto").val(urlParams.get('nom'));
+            $("#txtIdentificacion").val(urlParams.get('id'));
+            $("#txtNombreLaboratorio").val(urlParams.get('lab'));
+            $("#txtconfirmacion").val(urlParams.get('con'));
+            $("#txtExamen").val(urlParams.get('exa'));
+            $("#txtTelefono").val(urlParams.get('tel'));
+            $("#txtcorreo").val(urlParams.get('email'));
+            $("#txtDireccion").val(urlParams.get('dir'));
+            //?nom=LuisDiego&id=12&lab=Ujarras&con=13&exa=Tac&tel=84600799&email=luis.larraburo@gmail.com&dir=ParaísoCartago375metros
+        });
+
+
+    </script>
+
+    <div class="body-wrapper">
+
+        <div class="ltn__checkout-area mb-105">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ltn__checkout-single-content mt-50">
+                            <h4 class="title-2">Confirmación de su cita</h4>
+                            <div id="form" class="ltn__checkout-single-content-info">
+                                <form id="form" class="requires-validation" novalidate action="#">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Paciente</h6>
+                                            <div class="input-control">
+                                                <input type="text" name="ltn__name" class="form-control" id="txtNombreCompleto" disabled aria-describedby="inputGroupPrepend" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Código de cita</h6>
+                                            <div class="input-control">
+                                                <input type="text" name="ltn__lastname" class="form-control" id="txtIdentificacion" disabled aria-describedby="inputGroupPrepend" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Laboratorio</h6>
+                                            <div class="input-control">
+                                                <input type="text" name="ltn__name" class="form-control" id="txtNombreLaboratorio" disabled aria-describedby="inputGroupPrepend" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Fecha y hora de confirmación</h6>
+                                            <div class="input-control">
+                                                <input type="text" name="ltn__phone" class="form-control" id="txtconfirmacion" disabled aria-describedby="inputGroupPrepend" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6>Exámen</h6>
+                                            <div class="input-control">
+                                                <input type="text" id="txtExamen" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Telefono Laboratorio</h6>
+                                            <div class="input-control">
+                                                <input type="text" id="txtTelefono" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Correo Laboratorio</h6>
+                                            <div class="input-control">
+                                                <input type="text" id="txtcorreo" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Dirección exacta del laboratorio</h6>
+                                        <div class="input-item input-item-textarea ">
+                                            <textarea name="ltn__message" class="form-control" id="txtDireccion" aria-describedby="inputGroupPrepend" disabled required></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>

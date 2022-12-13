@@ -1,0 +1,53 @@
+﻿@{ 
+    ViewBag.Title = "Login";
+}
+
+
+<div style="color: red">
+    @ViewBag.Error
+</div>
+<div class="login-wrapper">
+
+    <div class="ltn__login-area pb-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area text-center">
+                        <h1 class="section-title">Inicio Sesión</h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="account-login-inner">
+                        <div class="ltn__form-box contact-form-box">
+                            <input type="text" name="correo" placeholder="Correo Electrónico*" id="txt_correo">
+                            <input type="password" name="password" placeholder="Password*" id="txt_password">
+                            <div class="btn-wrapper mt-0">
+                                <button class="theme-btn-1 btn btn-block" type="submit" id="iniciarSesion" onclick="Login()">INICIAR SESIÓN</button>
+                            </div>
+                            <div class="go-to-btn mt-20">
+                                @Html.ActionLink("¿Olvidaste tu contraseña?", "/StartRecovery")     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="account-create text-center pt-50">
+                        <h4>Registrarse</h4>
+                        <p>
+                            Presione el botón de registrarse <br>
+                            para comenzar a utilizar nuestros servicios.
+                        </p>
+                        <div class="btn-wrapper">
+                            <a href="/Home/Producto#Registrarse" class="theme-btn-1 btn black-btn">Registrarse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/Assets/Scripts/LoginValidation.js"></script>

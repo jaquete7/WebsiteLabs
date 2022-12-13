@@ -1,0 +1,26 @@
+﻿@model WebUI.Models.ViewModel.RecoveryPasswordViewModel
+@{
+    ViewBag.Title = "Recovery";
+}
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form action="@Url.Content("Recovery")" method="post">
+            @Html.HiddenFor(d=> d.token)
+            <div class="account-login-inner">
+                <div class="ltn__form-box contact-form-box">
+                    <label>Escribe tu nueva contraseña.</label>
+                    @Html.PasswordFor(d => d.Password, new { @class = "ltn__form-box contact-form-box" })
+                    @Html.ValidationMessageFor(d => d.Password, null, new { style = "color: red" })
+
+                    <label>Vuelve a escribir tu contraseña.</label>
+                    @Html.PasswordFor(d => d.Password2, new { @class = "ltn__form-box contact-form-box" })
+                    @Html.ValidationMessageFor(d => d.Password2, null, new { style = "color: red" })
+                    <div class="btn-wrapper d-grid gap-2 col-6 mx-auto">
+                        <button class="theme-btn-1 btn reverse-color btn-block">Recuperar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,0 +1,27 @@
+﻿body {
+
+  
+}
+
+.input-control input{
+    outline: 0;
+}
+
+.input-control.sucess input{
+    border-color: green;
+
+}
+
+.input-control.error input {
+    border-color: crimson;
+}
+
+.input-control .error {
+    color: crimson;
+    font-size: 100px;
+    height: 13px;
+}
+.div{
+    margin-top: 20px;
+}
+
